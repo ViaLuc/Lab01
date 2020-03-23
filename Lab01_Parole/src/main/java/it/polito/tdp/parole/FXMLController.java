@@ -34,7 +34,12 @@ public class FXMLController {
 
     @FXML
     void doInsert(ActionEvent event) {
-    	// TODO
+    	
+    	Parole nuovo = new Parole();
+    	nuovo.addParola(txtParola.getText());
+    	
+    	
+    	System.out.println(txtResult);
     }
 
     @FXML
