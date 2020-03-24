@@ -38,10 +38,12 @@ public class FXMLController {
     @FXML
     void delete(ActionEvent event) {
     	elenco.removeParola(txtParola.getText());
+    	txtParola.clear();
     	String risultato = "";
     	for(String s : elenco.getElenco())
     		risultato += s + "\n";    	
-    	txtResult.setText(risultato); 
+    	txtResult.setText(risultato);
+    	
     }
 
     @FXML
@@ -49,6 +51,7 @@ public class FXMLController {
     	
     	
     	elenco.addParola(txtParola.getText());
+    	txtParola.clear();
     	txtResult.clear();
     	String risultato = "";
     	for(String s : elenco.getElenco())
