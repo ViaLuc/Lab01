@@ -28,23 +28,39 @@ public class FXMLController {
 
     @FXML
     private TextArea txtResult;
+    
+    @FXML
+    private Button btnCancella;
 
     @FXML
     private Button btnReset;
+    
+    @FXML
+    void delete(ActionEvent event) {
+    	elenco.removeParola(txtParola.getText());
+    	String risultato = "";
+    	for(String s : elenco.getElenco())
+    		risultato += s + "\n";    	
+    	txtResult.setText(risultato); 
+    }
 
     @FXML
     void doInsert(ActionEvent event) {
     	
-    	Parole nuovo = new Parole();
-    	nuovo.addParola(txtParola.getText());
     	
+    	elenco.addParola(txtParola.getText());
+    	txtResult.clear();
+    	String risultato = "";
+    	for(String s : elenco.getElenco())
+    		risultato += s + "\n";    	
+    	txtResult.setText(risultato);
     	
-    	System.out.println(txtResult);
     }
 
     @FXML
     void doReset(ActionEvent event) {
-    	// TODO
+    	elenco.reset();
+    	txtResult.clear();
     }
 
     @FXML

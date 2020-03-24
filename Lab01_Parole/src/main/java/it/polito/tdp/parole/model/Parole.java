@@ -24,5 +24,12 @@ public class Parole {
 	public void reset() {
 		parole.clear();
 	}
+	
+	public void removeParola(String sInput) {
+		
+		parole.remove(sInput);
+	}
 
 }
+
+
